@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jujutsu Investing</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="css/leaderboard.css" />
+    <meta
+      name="description"
+      content="Allows you to see the best investors in Jujutsu Kaisen stocks"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  </head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8DTEXZK3ME"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8DTEXZK3ME');
+</script>
+  <body>
+    <div class="description-box">
+      <h1 class="description-title">Leaderboard</h1>
+      <p class="description">
+        (Must be logged in to appear on leaderboard)
+      </p>
+      <select name="stockSort" id="stockSort">
+        <option selected value="0" id="totalValueSort">Sort by total stock value+money in bank</option>
+        <option value="1"id="moneySort">Sort by money in bank</option>
+      </select>
+      </div>
+    <div id="leaderboard">
+    </div>
+    <button class="Homepage" onclick="location.href='/'">Back to Stock Display</button>
+  </body>
+  <script src="js/leaderboard.js"></script>
+</html>

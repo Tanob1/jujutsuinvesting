@@ -1,0 +1,1 @@
+Here is the code for the jujutsuinvesting.com website, the commits and code itself is a mess but someone requested it, if you want to make something similar make sure you add a .env file with an access token to the folder so that it can use json web tokens properly

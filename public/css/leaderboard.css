@@ -1,0 +1,80 @@
+body{
+  background-color: wheat;
+}
+@media screen and (max-width: 1000px){ html,body {min-width:1000px} }
+.description-title{
+    font-family: Arial;
+    font-size: 50px;
+    font-style: bold;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 1%;
+  }
+#leaderboard{
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 1%;
+}
+#stockSort{
+  font-size: 17px;
+  padding: 7px 20px;
+  display: block;
+  margin: auto;
+  background-color: orange;
+  text-align: center;
+  margin-top: 0.5%;
+}
+.description{
+  display: block;
+    margin: auto;
+    text-align: center;
+}
+.scoreboardTable {
+    padding: 0;
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+    color: black;
+    background-color: white;
+    }
+    .scoreboardTableHeaderRow {
+    color: darkorange;
+    font-weight: bold;
+    font-size: larger;
+    height: 40px;
+    }
+    .scoreboardTableBodyRow:nth-child(odd){background-color: rgba(128, 128, 128, 0.050);}
+    #latestUserScore {
+    background-color: crimson;
+    }
+    .scoreboardTableBodyRow:hover{
+    background-color: darkorange;
+    }
+    .scoreboardTable tr td {
+    height: 50px;
+    }
+.Homepage{
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  width: 48%;
+  height: 46px;
+  font-size: larger;
+  border: rgb(0, 8, 77);
+  background-color: rgb(48, 64, 202);
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 3px;
+  cursor: pointer;
+  text-align: center;
+}
+.Homepage:hover{
+  background-color: rgb(30, 14, 136);
+}
+.Homepage:active{
+  background-color: rgb(20, 10, 95);
+}
