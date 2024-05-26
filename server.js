@@ -286,7 +286,7 @@ app.post("/buy-stock",authenticateToken, (req, res) => {
   const maxID = db.max("id").from("stockvalues");
   let flag = false;
   const date = new Date();
-  if((date.getDay()==4)&&!enableInsiderTrading){
+  if((date.getDay()==4 || (date.getDay()==3&&date.getHours()==23))&&!enableInsiderTrading){
     res.json("Buying and selling stocks is closed between Thurday(when leaks drop) and when I update the stock values(asap) to prevent people from basicially insider trading, sorry about any inconvinience this may cause");
   }
   else{
@@ -372,7 +372,7 @@ app.post("/sell-stock",authenticateToken, (req, res) => {
   const maxID = db.max("id").from("stockvalues");
   let flag = false;
   const date = new Date();
-  if((date.getDay()==4)&&!enableInsiderTrading){
+  if((date.getDay()==4 || (date.getDay()==3&&date.getHours()==23))&&!enableInsiderTrading){
     res.json("Buying and selling stocks is closed between Thurday(when leaks drop) and when I update the stock values(asap) to prevent people from basicially insider trading, sorry about any inconvinience this may cause");
   }
   else{
