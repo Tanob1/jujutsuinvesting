@@ -182,6 +182,42 @@ let stockValues = [
     "Shoko",
     0,
   ],
+  [
+    [
+      19.32, 18.42, 17.35, 16.13, 15.52, 15.17, 24.75, 24.34, 23.67, 27.28,
+      41.39,
+    ],
+    true,
+    "Panda",
+    0,
+  ],
+  [
+    [
+      19.32, 18.42, 17.35, 16.13, 15.52, 15.17, 24.75, 24.34, 23.67, 27.28,
+      41.39,
+    ],
+    true,
+    "Inumaki",
+    0,
+  ],
+  [
+    [
+      19.32, 18.42, 17.35, 16.13, 15.52, 15.17, 24.75, 24.34, 23.67, 27.28,
+      41.39,
+    ],
+    true,
+    "Utahime",
+    0,
+  ],
+  [
+    [
+      19.32, 18.42, 17.35, 16.13, 15.52, 15.17, 24.75, 24.34, 23.67, 27.28,
+      41.39,
+    ],
+    true,
+    "Gakuganji",
+    0,
+  ],
 ];
 //possibly add checkboxes for fraud and goat mode
 /*let fraudNames = {"Gojo":"Go/Jo","Kashimo":"The Waffled One","Sukuna":"Fraudkuna","Yuta":"The Sneakiest","Maki":"Fem Toji","Yuji":"Punch and Kick Merchant","Higuruma":"Fodder 1","Kenjaku":"King of Recieving Backshots","Hakari":"Fodder 2","Nobara":"Haruta Victim","Megumi":"Potential Man","Uraume":"Glorified Freezer","Todo":"Useless CT Now"}
@@ -709,4 +745,8 @@ const validateData = (data) => {
   sessionStorage.mechamaru = data.mechamaru;
   sessionStorage.meimei = data.meimei;
   sessionStorage.shoko = data.shoko;
+  sessionStorage.panda = data.panda;
+  sessionStorage.gakuganji = data.gakuganji;
+  sessionStorage.inumaki = data.inumaki;
+  sessionStorage.utahime = data.utahime;
 };

@@ -84,6 +84,10 @@ const validateData = (data)=>{
         sessionStorage.mechamaru=data.mechamaru;
         sessionStorage.meimei = data.meimei;
         sessionStorage.shoko = data.shoko;
+        sessionStorage.panda = data.panda;
+        sessionStorage.gakuganji = data.gakuganji;
+        sessionStorage.inumaki = data.inumaki;
+        sessionStorage.utahime = data.utahime;
         //sessionStorage = JSON.parse(data)
         location.href = '/';
     }

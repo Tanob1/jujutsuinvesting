@@ -157,7 +157,7 @@ app.get("/stock-values", (req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei",
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji",
     "lastchapter")
     .orderBy("id","desc")
     .limit(10)
@@ -215,7 +215,7 @@ app.get("/get-user-data", authenticateToken,(req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei",
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji",
   )
     .from("users")
     .where({
@@ -251,7 +251,7 @@ app.post("/login-user", (req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei",
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji",
   )
     .from("users")
     .where({
@@ -311,7 +311,7 @@ app.post("/buy-stock",authenticateToken, (req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei",
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji",
   )
     .from("stockvalues")
     .where("id", maxID)
@@ -397,7 +397,7 @@ app.post("/sell-stock",authenticateToken, (req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei",
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji",
   )
     .from("stockvalues")
     .where("id", maxID)
