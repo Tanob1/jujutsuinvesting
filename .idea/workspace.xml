@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c3ad20d4-42a8-4046-914b-4d10bf6dae96" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/android-chrome-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/android-chrome-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/apple-touch-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/browserconfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/css/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/css/leaderboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/favicon-16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/favicon-32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Choso.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Gakuganji.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Gojo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Hakari.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Higuruma.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Ino.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Inumaki.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Kashimo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Kenjaku.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Kusakabe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Maki.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Mechamaru.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Megumi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Meimei.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Miguel.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Miwa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Nobara.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Panda.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Shoko.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Sukuna.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Takaba.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Todo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Uiui.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Uraume.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Utahime.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Yuji.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/Yuta.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/images/stocks.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/js/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/js/leaderboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/leaderboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/mstile-150x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/safari-pinned-tab.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/site.webmanifest" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jujutsuinvesting.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/android-chrome-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/android-chrome-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/browserconfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/leaderboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Choso.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Gakuganji.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Gojo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Hakari.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Higuruma.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Ino.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Inumaki.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Kashimo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Kenjaku.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Kusakabe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Maki.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Mechamaru.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Megumi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Meimei.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Miguel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Miwa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Nobara.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Panda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Shoko.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Sukuna.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Takaba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Todo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Uiui.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Uraume.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Utahime.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Yuji.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/Yuta.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/stocks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/leaderboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/leaderboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mstile-150x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/safari-pinned-tab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/site.webmanifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2hiiOUGXJl9NCoLxTKtKVMLBQjT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.server.js.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "project-restructure",
+    "javascript.nodejs.core.library.configured.version": "20.12.2",
+    "javascript.nodejs.core.library.typings.version": "20.12.14",
+    "jdk.selected.JAVA_MODULE": "openjdk-22",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\jujutsuinvesting\backend" />
+      <recent name="D:\Projects\jujutsuinvesting\frontend" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3ad20d4-42a8-4046-914b-4d10bf6dae96" name="Changes" comment="" />
+      <created>1718083267658</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718083267658</updated>
+      <workItem from="1718083269685" duration="2791000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

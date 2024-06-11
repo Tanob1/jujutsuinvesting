@@ -21,7 +21,7 @@ function sleep(ms) {
 
 const app = express();
 
-let initialPath = path.join(__dirname, "public");
+let initialPath = path.join(__dirname, "../frontend/public");
 app.use(bodyParser.json());
 app.use(express.static(initialPath));
 
