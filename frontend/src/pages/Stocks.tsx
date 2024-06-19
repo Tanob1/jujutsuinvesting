@@ -97,11 +97,11 @@ export default function Stocks() {
         Buying {BuysliderValue} Shares
       </chakra.h2>
 
-      <Slider  onChange={(val) => setBuySliderValue(val)} defaultValue={1} min={1} max={100}>
+      <Slider onChange={(val) => setBuySliderValue(val)} defaultValue={1} min={1} max={100}>
         <SliderTrack>
           <SliderFilledTrack bg='purple.300' />
         </SliderTrack>
-        <SliderThumb boxSize={4} />
+        <SliderThumb boxSize={4} bg="purple.400"/>
       </Slider>
 
 
@@ -113,7 +113,7 @@ export default function Stocks() {
         <SliderTrack >
           <SliderFilledTrack bg='purple.300' />
         </SliderTrack>
-        <SliderThumb boxSize={4} />
+        <SliderThumb boxSize={4} bg="purple.400"/>
       </Slider>
       </Stack>
 
