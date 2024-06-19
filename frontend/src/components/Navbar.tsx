@@ -14,8 +14,8 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
+  useColorMode 
 } from '@chakra-ui/react'
 
 import {
@@ -25,8 +25,13 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons'
 
+import { BsSun, BsMoonStarsFill } from 'react-icons/bs'
+
+
 export default function WithSubnavigation() {
-  const { isOpen, onToggle } = useDisclosure()
+  const { isOpen, onToggle, } = useDisclosure()
+  const { colorMode, toggleColorMode } = useColorMode()
+
 
   return (
     <Box>
@@ -61,8 +66,8 @@ export default function WithSubnavigation() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
-            Sign In
+          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'/login'}>
+            Log In
           </Button>
           <Button
             as={'a'}
@@ -71,12 +76,19 @@ export default function WithSubnavigation() {
             fontWeight={600}
             color={'white'}
             bg={'purple.400'}
-            href={'#'}
+            href={'/signup'}
             _hover={{
               bg: 'purple.300',
             }}>
             Sign Up
           </Button>
+          <Button
+        aria-label="Toggle Color Mode"
+        onClick={toggleColorMode}
+        _focus={{ boxShadow: 'none' }}
+        w="fit-content">
+        {colorMode === 'light' ? <BsMoonStarsFill /> : <BsSun />}
+      </Button>
         </Stack>
       </Flex>
 
@@ -144,12 +156,12 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+      _hover={{ bg: useColorModeValue('purple.50', 'gray.900') }}>
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text
             transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
+            _groupHover={{ color: 'purple.400' }}
             fontWeight={500}>
             {label}
           </Text>
@@ -163,7 +175,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           justify={'flex-end'}
           align={'center'}
           flex={1}>
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={'purple.400'} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Box>

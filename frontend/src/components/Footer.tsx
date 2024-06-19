@@ -43,7 +43,7 @@ const SocialButton = ({
 
 export default function SmallWithSocial() {
   return (
-    
+
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}>
@@ -56,20 +56,20 @@ export default function SmallWithSocial() {
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
         <Stack direction={'row'} spacing={6}>
-          <Box as="a" href={'#'}>
+          <Box as="a" href={'/'}>
             Home
           </Box>
-          <Box as="a" href={'#'}>
+          <Box as="a" href={'https://docs.google.com/forms/d/e/1FAIpQLSfWVcNtQKfH30nhsetrvV7lHol_VL9YYRA7KV59yf8H6GL8Ug/viewform'}>
             Contact
           </Box>
-          <Box as="a" href={'#'}>
+          <Box as="a" href={'/#moreinfo'}>
             Warning
           </Box>
         </Stack>          <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Twitter'} href={'#'}>
+          <SocialButton label={'Reddit'} href={'#'}>
             <FaReddit />
           </SocialButton>
-          <SocialButton label={'Instagram'} href={'#'}>
+          <SocialButton label={'Github'} href={'https://github.com/Tanob1/jujutsuinvesting'}>
             <FaGithub />
           </SocialButton>
         </Stack>

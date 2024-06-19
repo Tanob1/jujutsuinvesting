@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from "@chakra-ui/react";
+import { Flex, Spacer } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -11,6 +11,7 @@ const ErrorLayout: React.FC<ErrorLayoutProps> = ({ children }) => {
   return (
     <Flex direction="column" minH="100vh">
       <Navbar />
+      <Spacer />
       <Flex flex="1" direction="column">
         {children}
       </Flex>

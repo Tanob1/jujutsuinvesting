@@ -8,6 +8,8 @@ import RootLayout from './layouts/RootLayout';
 import Home from './pages/Home';
 import Leaderboard from './pages/Leaderboard';
 import Stocks from './pages/Stocks';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import ErrorPage from './pages/ErrorPage';
 import ErrorLayout from './layouts/ErrorLayout';
 import React from 'react';
@@ -19,7 +21,9 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="leaderboard" element={<Leaderboard />} />
       <Route path="stocks" element={<Stocks />} />
-    </Route>
+      <Route path="login" element={<Login />} />
+      <Route path="signup" element={<Signup />} />
+    </Route>  
   )
 );
 
