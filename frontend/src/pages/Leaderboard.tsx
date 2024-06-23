@@ -14,20 +14,55 @@ import {
   Td,
   TableCaption,
   TableContainer,
+  Heading,
+  Flex,
+  Spacer,
+  Text
 } from '@chakra-ui/react'
 
 export default function Leaderboard() {
   return (
     <Container maxW="7xl" mt={14} p={4}>
       <Stack>
-        <chakra.h2 fontSize="3xl" fontWeight="700">
+        <Heading>
           Leaderboard
-        </chakra.h2>
-        <chakra.p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo vel, nostrum repellat dignissimos beatae deleniti cumque vero veritatis ipsa veniam optio dolorum ratione, sequi eligendi voluptatum, adipisci iure mollitia voluptatibus?
-        </chakra.p>
+        </Heading>
+        <Text>
+          Must be logged in to appear on leaderboard      
+        </Text>
       </Stack>
       <Divider mt={12} mb={12} />
+
+      <Flex direction={{
+        base: 'column', 
+        sm: 'row', 
+      }} 
+      gap={{
+        base: '1rem', 
+      }}>
+        <Stack>
+        <Heading> Ranking </Heading>
+          <Text fontSize='3xl'>19203</Text>
+        </Stack>
+        <Spacer />
+        <Stack>
+        <Heading> Total </Heading>
+        <Text fontSize='3xl'>222222</Text>
+        </Stack>
+        <Spacer />
+        <Stack>
+        <Heading> Bank </Heading>
+        <Text fontSize='3xl'>111111</Text>
+        </Stack>
+        <Spacer />
+        <Stack>
+        <Heading> Stocks </Heading>
+        <Text fontSize='3xl'>111111</Text>
+        </Stack>
+      </Flex>
+
+      <Divider mt={12} mb={12} />
+
       <Tabs>
         <TabList>
           <Tab>Bank+Stocks</Tab>

@@ -1,73 +1,73 @@
+import React, { useState } from "react";
 import {
-  Box,
-  Center,
-  useColorModeValue,
-  Heading,
-  Text,
   Stack,
-  Image,
-  Flex,
-  Button,
+  Divider,
+  chakra,
   Container,
-  Stat,
-  StatNumber,
-  StatHelpText,
-  StatArrow,
+  Grid, GridItem,
+  Image,
   Skeleton,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
+  Box,
+  Flex,
+  Text,
+  Spacer,
+  Card,
+  CardBody,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  Heading,
+  useColorModeValue,
+  Button,
+  HStack
 } from '@chakra-ui/react'
 
-import { ChevronDownIcon } from '@chakra-ui/icons'
-
-import React from "react";
-
-const IMAGE =
-  'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg'
-
-
 export default function Home() {
+  const [BuysliderValue, setBuySliderValue] = useState(1)
+  const [SellsliderValue, setSellSliderValue] = useState(1)
+  const images = [
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+
+    // Add more images as needed
+  ];
   return (
-    <div>
-      {/* Hero */}
-      <Container maxW={'7xl'}>
-        <Stack
-          align={'center'}
-          spacing={{ base: 8, md: 10 }}
-          py={{ base: 20, md: 28 }}
-          direction={{ base: 'column', md: 'row' }}>
-          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-            <Heading
-              lineHeight={1.1}
-              fontWeight={600}
-              fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
-              <Text
-                as={'span'}
-                position={'relative'}
-                _after={{
-                  content: "''",
-                  width: 'full',
-                  height: '30%',
-                  position: 'absolute',
-                  bottom: 1,
-                  left: 0,
-                  bg: 'purple.400',
-                  zIndex: -1,
-                }}>
-                Welcome to
-              </Text>
-              <br />
-              <Text as={'span'} color={'purple.400'}>
-                Jujutsu Investing!            </Text>
-            </Heading>
-            <Text color={'gray.500'}>
-              Do you want to put your stocks in Gojo? Kashimo? Yuta? Whoever you want to invest in we have you covered.
-              Get started and start investing now!
-            </Text>
-            <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
-              <Button
+<Container maxW="7xl" mt={14} p={4}>
+      <Stack gap={"20px"}>
+        <Heading
+          fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
+          >
+          Welcome to{' '}
+          <Text as={'span'} color={'purple.400'}>
+          Jujutsu Investing
+          </Text>
+        </Heading>
+        <Text>
+        Do you want to put your stocks in Gojo? Kashimo? Yuta? Whoever you want to invest in we have you covered, simply select who to invest in and invest! Their stock will go up if they are doing good or are winning against/beat someone. Their stock will go down if they are doing bad or losing against someone or are killed. Stocks close at 11pm EST on Wednesday(right before leaks drop) and reopen ASAP(within a day at most)
+        </Text>
+        <HStack>
+        <Button
                 rounded={'full'}
                 size={'lg'}
                 fontWeight={'normal'}
@@ -88,7 +88,7 @@ export default function Home() {
                 px={6}
                 as={'a'}
                 href={'/stocks'}>
-                Trade Stocks
+                Stock Report
               </Button>
               <Button
                 rounded={'full'}
@@ -97,150 +97,150 @@ export default function Home() {
                 px={6}
                 as={'a'}
                 href={'#moreinfo'}>
-                Details
+                Bug Report
               </Button>
-            </Stack>
-          </Stack>
-          <Flex
-            flex={1}
-            justify={'center'}
-            align={'center'}
-            position={'relative'}
-            w={'full'}>
+        </HStack>
+      </Stack>
+      <Divider mt={12} mb={12} />
+
+      {/* Chart Area */}
+      <Heading>
+          Graph
+        </Heading>
+      <Skeleton>
+        <Box w={"500px"} h={"500px"}>
+
+        </Box>
+      </Skeleton>
+      <Divider mt={12} mb={12} />
+
+      {/* Trading Area */}
+
+      {/* Settings Area */}
+
+      <Stack pb="50px">
+        {/* <Heading fontSize="3xl" fontWeight="700">
+            Warning
+        </Heading>
+        <chakra.p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, vero doloribus ipsam non exercitationem consequatur placeat, possimus distinctio ad illum ut! Eaque magnam consequatur odio pariatur placeat dolor, fugiat beatae!
+        </chakra.p> */}
+
+        <Heading>
+            Bank Blanace
+        </Heading>
+        <Heading
+          fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
+          color={'purple.400'}
+          >
+          $100,000
+        </Heading>
+
+      <Heading>
+        Buying {BuysliderValue} Shares
+      </Heading>
+
+      <Slider onChange={(val) => setBuySliderValue(val)} defaultValue={1} min={1} max={100}>
+        <SliderTrack>
+          <SliderFilledTrack bg='purple.300' />
+        </SliderTrack>
+        <SliderThumb boxSize={4} bg="purple.400"/>
+      </Slider>
+
+
+      <Heading>
+        Selling {SellsliderValue} Shares
+      </Heading>
+
+      <Slider  onChange={(val) => setSellSliderValue(val)}defaultValue={1} min={1} max={100}>
+        <SliderTrack >
+          <SliderFilledTrack bg='purple.300' />
+        </SliderTrack>
+        <SliderThumb boxSize={4} bg="purple.400"/>
+      </Slider>
+      </Stack>
+
+      
+      {/* Characters Area */}
+      <Grid
+      templateColumns={{
+        base: 'repeat(1, 1fr)', // 1 column for small screens
+        sm: 'repeat(2, 1fr)', // 2 columns for small screens and up
+        md: 'repeat(3, 1fr)', // 3 columns for medium screens and up
+        lg: 'repeat(4, 1fr)', // 4 columns for large screens and up
+        xl: 'repeat(5, 1fr)'  // 6 columns for extra large screens
+      }}
+      gap={10}
+    >
+      {images.map((image, index) => (
+        <GridItem key={index}>
+          <Box
+            role={'group'}
+            p={6}
+            maxW={'330px'}
+            w={'full'}
+            bg={useColorModeValue('white', 'gray.800')}
+            boxShadow={'2xl'}
+            rounded={'lg'}
+            pos={'relative'}
+            zIndex={1}>
             <Box
-              role={'group'}
-              p={6}
-              maxW={'330px'}
-              w={'full'}
-              bg={useColorModeValue('white', 'gray.800')}
-              boxShadow={'2xl'}
               rounded={'lg'}
+              mt={-12}
               pos={'relative'}
-              zIndex={1}>
-              {/* <Skeleton> */}
-              <Box
+              height={'230px'}
+              _after={{
+                transition: 'all .3s ease',
+                content: '""',
+                w: 'full',
+                h: 'full',
+                pos: 'absolute',
+                top: 5,
+                left: 0,
+                backgroundImage: `url(${image.src})`,
+                filter: 'blur(15px)',
+                zIndex: -1,
+              }}
+              _groupHover={{
+                _after: {
+                  filter: 'blur(20px)',
+                },
+              }}>
+              <Image
                 rounded={'lg'}
-                mt={-12}
-                pos={'relative'}
-                height={'230px'}
-                _after={{
-                  transition: 'all .3s ease',
-                  content: '""',
-                  w: 'full',
-                  h: 'full',
-                  pos: 'absolute',
-                  top: 5,
-                  left: 0,
-                  backgroundImage: `url(${IMAGE})`,
-                  filter: 'blur(15px)',
-                  zIndex: -1,
-                }}
-                _groupHover={{
-                  _after: {
-                    filter: 'blur(20px)',
-                  },
-                }}>
-                  
-                <Image
-                  rounded={'lg'}
-                  height={230}
-                  width={282}
-                  objectFit={'cover'}
-                  src={IMAGE}
-                  alt="#"
-                />
-              </Box>
-            {/* </Skeleton> */}
-              <Stack pt={10}>
-                <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
-                  Top Stock of the Today
-                </Text>
-                <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-                  NAME OF THE STOCK
-                </Heading>
-                <Stack direction={'row'}>
-                <Stat>
-                    <StatNumber>345,670</StatNumber>
-                    <StatHelpText>
-                      <StatArrow type='increase' />
-                      23.36%
-                    </StatHelpText>
-                  </Stat>
-                </Stack>
-              </Stack>
+                height={230}
+                width={282}
+                objectFit={'cover'}
+                src={image.src}
+                alt={image.title}
+              />
             </Box>
-          </Flex>
-        </Stack>
-      </Container>
+            <Stack pt={10} align={'center'}>
+              <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
+                {image.title}
+              </Heading>
+              <Stack direction={'column'} align={'center'}>
+                <Text fontWeight={800} fontSize={'xl'}>
+                  Value $57
+                </Text>
+                <Text>
+                  Owned ###
+                </Text>
+              </Stack>
+              <Stack direction={"row"}>
+                              <Button bg={"purple.300"}>
+                Buy
+              </Button>
+              <Button>
+                Sell
+              </Button>
+              </Stack>
 
-
-      {/* Some more info */}
-      <Container maxW={'7xl'}>
-      <Stack
-          align={{base:"center",md:"normal"}}
-          spacing={{ base: 8, md: 40 }}
-          py={{ base: 20, md: 28 }}
-          direction={{ base: 'column', md: 'row' }}>
-        {/* First part */}
-        <Accordion allowMultiple width="100%" maxW="lg" rounded="lg">
-          <AccordionItem>
-            <AccordionButton
-              display="flex"
-              alignItems="center"
-              justifyContent="space-between"
-              p={4}>
-              <Text fontSize="md">What is Jujutsu Investing?</Text>
-              <ChevronDownIcon fontSize="24px" />
-            </AccordionButton>
-            <AccordionPanel pb={4}>
-              <Text color="gray.600">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum sapiente nemo nihil aliquam eaque similique labore magni, iusto error! Necessitatibus veritatis assumenda sequi similique quos vitae iste, animi eveniet magnam.
-              </Text>
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <AccordionButton
-              display="flex"
-              alignItems="center"
-              justifyContent="space-between"
-              p={4}>
-              <Text fontSize="md">Do we us real world currency?</Text>
-              <ChevronDownIcon fontSize="24px" />
-            </AccordionButton>
-            <AccordionPanel pb={4}>
-              <Text color="gray.600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro eaque accusamus, at tenetur nostrum nam officiis, debitis similique inventore quia culpa excepturi saepe minus eum suscipit veritatis optio in nesciunt?
-              </Text>
-            </AccordionPanel>
-          </AccordionItem>
-          <AccordionItem>
-            <AccordionButton
-              display="flex"
-              alignItems="center"
-              justifyContent="space-between"
-              p={4}>
-              <Text fontSize="md">When does trading stop?</Text>
-              <ChevronDownIcon fontSize="24px" />
-            </AccordionButton>
-            <AccordionPanel pb={4}>
-              <Text color="gray.600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus deleniti similique tempora sint! Voluptatibus culpa voluptas eos. Debitis sapiente temporibus delectus aliquam, consectetur, officia eaque doloribus officiis laborum ducimus eligendi.
-              </Text>
-            </AccordionPanel>
-          </AccordionItem>
-        </Accordion>
-        
-        {/* Second Part */}
-        <div id="moreinfo">        
-          <Heading>
-            What is This Project?
-          </Heading>
-          <Text>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla architecto consequuntur eveniet optio suscipit inventore quo dignissimos, quisquam aut cupiditate ad labore, culpa recusandae animi magnam vitae, accusamus ipsam dolores!
-          </Text>
-        </div>
-        </Stack>
-      </Container>
-    </div>
-  )
+            </Stack>
+          </Box>
+        </GridItem>
+      ))}
+    </Grid>
+    </Container>  
+    )
 }

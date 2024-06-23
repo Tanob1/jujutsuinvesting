@@ -15,7 +15,8 @@ import {
   PopoverContent,
   useColorModeValue,
   useDisclosure,
-  useColorMode 
+  useColorMode, 
+  Container
 } from '@chakra-ui/react'
 
 import {
@@ -34,16 +35,17 @@ export default function WithSubnavigation() {
 
 
   return (
-    <Box>
+    <Box  borderBottom={1}
+    borderStyle={'solid'}
+    borderColor={useColorModeValue('gray.200', 'gray.900')}>
+              <Container maxW={'7xl'}>
+
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
         align={'center'}>
         <Flex
           flex={{ base: 1, md: 'auto' }}
@@ -95,6 +97,7 @@ export default function WithSubnavigation() {
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
+      </Container>
     </Box>
   )
 }
@@ -285,9 +288,5 @@ const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Leaderboard',
     href: '/leaderboard',
-  },
-  {
-    label: 'Stocks',
-    href: '/stocks',
   },
 ]

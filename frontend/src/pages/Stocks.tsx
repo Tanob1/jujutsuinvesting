@@ -198,5 +198,6 @@ export default function Stocks() {
         </GridItem>
       ))}
     </Grid>
-    </Container>  )
+    </Container>  
+    )
 }
