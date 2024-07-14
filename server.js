@@ -215,7 +215,7 @@ app.get("/get-user-data", authenticateToken,(req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji",
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji", /* "achievements", */
   )
     .from("users")
     .where({
@@ -251,7 +251,7 @@ app.post("/login-user", (req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji", /* "achievements", */
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji", 
   )
     .from("users")
     .where({
