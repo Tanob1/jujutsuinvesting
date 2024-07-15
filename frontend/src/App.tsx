@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import ErrorPage from './pages/ErrorPage';
 import ErrorLayout from './layouts/ErrorLayout';
+import Achievements from './pages/Achievements';
 import React from 'react';
 
 // router and routes
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="leaderboard" element={<Leaderboard />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
+      <Route path="achievements" element={<Achievements />} />
     </Route>  
   )
 );

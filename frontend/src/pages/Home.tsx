@@ -87,16 +87,7 @@ export default function Home() {
                 fontWeight={'normal'}
                 px={6}
                 as={'a'}
-                href={'/stocks'}>
-                Stock Report
-              </Button>
-              <Button
-                rounded={'full'}
-                size={'lg'}
-                fontWeight={'normal'}
-                px={6}
-                as={'a'}
-                href={'#moreinfo'}>
+                href={'https://docs.google.com/forms/d/e/1FAIpQLSfWVcNtQKfH30nhsetrvV7lHol_VL9YYRA7KV59yf8H6GL8Ug/viewform?'}>
                 Bug Report
               </Button>
         </HStack>
