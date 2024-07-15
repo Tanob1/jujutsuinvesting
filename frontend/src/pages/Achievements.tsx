@@ -47,7 +47,7 @@ export default function Achievements() {
     { src: 'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', achievementTitle: 'It's just...so peak', description: 'Hold XX Panda stock for atleast a week', isCompleted: false },
     { src: 'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', achievementTitle: 'SHIT YOURSELF', description: 'Hold XX Inumaki stock for atleast a week', isCompleted: false },
     { src: 'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', achievementTitle: 'Mommy?', description: 'Hold XX Utahime stock for atleast a week', isCompleted: false },
-    { src: 'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', achievementTitle: 'You've got quite the mouth, description: 'Hold XX Gakuganji stock for atleast a week', isCompleted: false },
+    { src: 'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', achievementTitle: 'You've got quite the mouth', description: 'Hold XX Gakuganji stock for atleast a week', isCompleted: false },
      { src: 'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', achievementTitle: 'Mei Mei Certified', description: 'Have atleast 10,000 in assets', isCompleted: false },
 
 
