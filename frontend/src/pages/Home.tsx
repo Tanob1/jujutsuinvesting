@@ -26,31 +26,34 @@ import {
 export default function Home() {
   const [BuysliderValue, setBuySliderValue] = useState(1)
   const [SellsliderValue, setSellSliderValue] = useState(1)
-  const images = [
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
-    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', title: 'Image 1' },
+  const characters = [
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
+    { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
 
-    // Add more images as needed
+
+    // Add more stock as needed
   ];
   return (
 <Container maxW="7xl" mt={14} p={4}>
@@ -163,7 +166,7 @@ export default function Home() {
       }}
       gap={10}
     >
-      {images.map((image, index) => (
+      {characters.map((character, index) => (
         <GridItem key={index}>
           <Box
             role={'group'}
@@ -188,7 +191,7 @@ export default function Home() {
                 pos: 'absolute',
                 top: 5,
                 left: 0,
-                backgroundImage: `url(${image.src})`,
+                backgroundImage: `url(${character.src})`,
                 filter: 'blur(15px)',
                 zIndex: -1,
               }}
@@ -202,24 +205,24 @@ export default function Home() {
                 height={230}
                 width={282}
                 objectFit={'cover'}
-                src={image.src}
-                alt={image.title}
+                src={character.src}
+                alt={character.name}
               />
             </Box>
             <Stack pt={10} align={'center'}>
               <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-                {image.title}
+                {character.name}
               </Heading>
               <Stack direction={'column'} align={'center'}>
                 <Text fontWeight={800} fontSize={'xl'}>
-                  Value $57
+                  Value {character.price}
                 </Text>
                 <Text>
-                  Owned ###
+                  Owned {character.owned}
                 </Text>
               </Stack>
               <Stack direction={"row"}>
-                              <Button bg={"purple.300"}>
+              <Button bg={"purple.300"}>
                 Buy
               </Button>
               <Button>
