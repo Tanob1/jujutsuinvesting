@@ -13,6 +13,7 @@ import {
   Text,
   Heading,
   Image,
+  Spacer,
   Grid, // Import the Image component from next/image
 } from "@chakra-ui/react"
 import { IoMdCheckmarkCircle } from "react-icons/io";
@@ -57,6 +58,8 @@ export default function Achievements() {
 
 
 
+  const unlockedAchievements = achievement_data.filter((achievement) => achievement.isCompleted);
+  
   return (
     <Container maxW="7xl" mt={14} p={4}>
       <Stack>
@@ -68,6 +71,22 @@ export default function Achievements() {
         </Text>
       </Stack>
       <Divider mt={12} mb={12} />
+
+      <Flex direction={{
+        base: 'column', 
+        sm: 'row', 
+      }} 
+      gap={{
+        base: '1rem', 
+      }}>
+        <Stack>
+        <Heading> Unlocked </Heading>
+          <Text fontSize='3xl'>{unlockedAchievements.length}/{achievement_data.length}</Text>
+        </Stack>
+      </Flex>
+
+      <Divider mt={12} mb={12} />
+
 
       {/* Achievments Area */}
       <Grid
@@ -86,9 +105,17 @@ export default function Achievements() {
               w="full"
               h={"full"}
               mx="auto"
-              bgGradient={achievement.isCompleted ? "linear(to-r, purple.400, blue.400)" : "linear(to-r, gray.500, gray.300)"}
+              bgGradient={achievement.isCompleted ? "linear(to-r, blue.400, purple.400)" : "linear(to-r, gray.500, gray.300)"}
+              _dark={{ bgGradient: achievement.isCompleted ? "linear(to-r, blue.400, purple.400)" : "linear(to-r, gray.500, gray.600)" }}
               rounded="lg"
-              overflow="hidden">
+              overflow="hidden"
+              transition={"all 0.3s ease"}
+              _hover={{
+                transform: "scale(1.05)", // Scale up on hover
+                boxShadow: "xl",
+                 // Add transition effect
+              }}
+            >
               <Image src={achievement.src} w={"80px"}/>
 
               <Box mx={-3} py={2} px={4}>

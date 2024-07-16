@@ -66,7 +66,7 @@ export default function SmallWithSocial() {
             Warning
           </Box>
         </Stack>          <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Reddit'} href={'#'}>
+          <SocialButton label={'Reddit'} href={'https://www.reddit.com/r/Jujutsufolk/comments/1e17fxl/the_jujutsu_kaisen_stock_report_15/?'}>
             <FaReddit />
           </SocialButton>
           <SocialButton label={'Github'} href={'https://github.com/Tanob1/jujutsuinvesting'}>
