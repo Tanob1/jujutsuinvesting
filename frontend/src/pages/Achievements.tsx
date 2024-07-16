@@ -21,7 +21,7 @@ import { IoMdCheckmarkCircle } from "react-icons/io";
 // isCompleted could be if its unlocked or not, maybe you can even add a progress bar?
 export default function Achievements() {
   let achievement_data = [
-    { src: "https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg", achievementTitle: "STRONG RETURN", description: "Hold XX Gojo stock for atleast a week", isCompleted: false },
+    { src: "https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg", achievementTitle: "STRONG RETURN", description: "Hold XX Gojo stock for atleast a week", isCompleted: true },
     { src: "https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg", achievementTitle: "But that's how losers think", description: "Hold XX Kashimo stock for atleast a week", isCompleted: false},
     { src: "https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg", achievementTitle: "Ah yes, my achievements technique", description: "Hold XX Sukuna stock for atleast a week", isCompleted: false },
     { src: "https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg", achievementTitle: "Make it close but win again", description: "Hold XX Yuta stock for atleast a week", isCompleted: false},
@@ -86,10 +86,7 @@ export default function Achievements() {
               w="full"
               h={"full"}
               mx="auto"
-              bg={achievement.isCompleted ? "green.500" : "gray.500"}
-              _dark={{
-                bg: achievement.isCompleted ? "green.400" : "gray.400",
-              }}
+              bgGradient={achievement.isCompleted ? "linear(to-r, purple.400, blue.400)" : "linear(to-r, gray.500, gray.300)"}
               rounded="lg"
               overflow="hidden">
               <Image src={achievement.src} w={"80px"}/>
