@@ -67,7 +67,7 @@ app.post("/leaderboard-money", (req, res) => {
   const {username}=req.body;
   if(username!=null){
   return db("users")
-    .with('stuff',db("users").select(["totalstockvalue","money", "username"])
+    .with('stuff',db("users").select(["totalstockvalue","profit","money", "username"])
     .rowNumber('position', function () {
       this.orderBy("money", "desc");
     })
@@ -87,7 +87,7 @@ app.post("/leaderboard-money", (req, res) => {
   }
   else{
     return db("users")
-    .select(["money","totalstockvalue", "username"])
+    .select(["money","profit","totalstockvalue", "username"])
     .orderBy("money", "desc")
     .limit(15)
     .returning(["scores"])
@@ -103,7 +103,7 @@ app.post("/leaderboard-totalstockvalue", (req, res) => {
   const {username}=req.body;
   if(username!=null){
   return db("users")
-    .with('stuff',db("users").select(["totalstockvalue","money", "username"])
+    .with('stuff',db("users").select(["totalstockvalue","profit","money", "username"])
     .rowNumber('position', function () {
       this.orderBy("totalstockvalue", "desc");
     })
@@ -123,8 +123,44 @@ app.post("/leaderboard-totalstockvalue", (req, res) => {
   }
   else{
     return db("users")
-    .select(["totalstockvalue","money", "username"])
+    .select(["totalstockvalue","profit","money", "username"])
     .orderBy("totalstockvalue", "desc")
+    .limit(15)
+    .returning(["scores"])
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+  }
+});
+app.post("/leaderboard-profit", (req, res) => {
+  const {username}=req.body;
+  if(username!=null){
+  return db("users")
+    .with('stuff',db("users").select(["totalstockvalue","profit","money", "username"])
+    .rowNumber('position', function () {
+      this.orderBy("profit", "desc");
+    })
+    .returning(["scores"]))
+    .select('*')
+    .from('stuff')
+    .where('position','<',16)
+    .orWhere({
+      username: username,
+    })
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+  }
+  else{
+    return db("users")
+    .select(["money","profit","totalstockvalue", "username"])
+    .orderBy("profit", "desc")
     .limit(15)
     .returning(["scores"])
     .then((data) => {
@@ -157,7 +193,7 @@ app.get("/stock-values", (req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji",
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji","hana",
     "lastchapter")
     .orderBy("id","desc")
     .limit(10)
@@ -215,7 +251,7 @@ app.get("/get-user-data", authenticateToken,(req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji", /* "achievements", */
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji","hana","profit" /* "achievements", */
   )
     .from("users")
     .where({
@@ -251,7 +287,7 @@ app.post("/login-user", (req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji", 
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji","hana","profit"  
   )
     .from("users")
     .where({
@@ -311,7 +347,7 @@ app.post("/buy-stock",authenticateToken, (req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji",
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji","hana",
   )
     .from("stockvalues")
     .where("id", maxID)
@@ -397,7 +433,7 @@ app.post("/sell-stock",authenticateToken, (req, res) => {
     "miguel",
     "choso",
     "miwa",
-    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji",
+    "mechamaru","shoko","meimei","panda","inumaki","utahime","gakuganji","hana",
   )
     .from("stockvalues")
     .where("id", maxID)

@@ -1,14 +1,11 @@
 getScores(0);
 document.getElementById("stockSort").addEventListener("change", function() {
   document.getElementById("leaderboard").innerHTML='';
-  if (this.value == "1") {
-    getScores(1);
-  }else{
-     getScores(0);
-  }});
+    getScores(Number(this.value));
+});
 function drawInvestors() {
   const scoreDiv = document.getElementById("leaderboard");
-  let tableHeaders = ["Rank", "Username", "Money(In Bank)","Money(Total if all stocks were sold right now)"];
+  let tableHeaders = ["Rank", "Username", "Money(In Bank)","Money(Total if all stocks were sold right now)","Profit(Since chapter 264)"];
   let scoreboardTable = document.createElement("table"); 
   scoreboardTable.className = "scoreboardTable";
   let scoreboardTableHead = document.createElement("thead"); 
@@ -44,11 +41,14 @@ function appendScores(singleInvestor, investorIndex){
   scoreData.innerText = '$'+singleInvestor.money;
   let totalValueData = document.createElement("td");
   totalValueData.innerText = '$'+singleInvestor.totalstockvalue;
+  let profitData = document.createElement("td");
+  profitData.innerText = '$'+singleInvestor.profit;
   scoreboardTableBodyRow.append(
     scoreRanking,
     usernameData,
     scoreData,
-    totalValueData
+    totalValueData,
+    profitData
   );
   scoreboardTable.append(scoreboardTableBodyRow); 
 };
@@ -76,6 +76,24 @@ function getScores(type){
   }
   else if(type==0){
   fetch("/leaderboard-totalstockvalue", {
+    method: "post",
+    headers: new Headers({
+      "Content-Type": "application/json"
+    }),
+    body: JSON.stringify({
+      username: sessionStorage.username
+    }),
+  }) 
+    .then((res) => res.json())
+    .then((scores) => {
+      drawInvestors(); 
+      for (const score of scores) {
+        let scoreIndex = scores.indexOf(score) + 1;
+        appendScores(score, scoreIndex); 
+      }
+    });
+}else if(type==2){
+  fetch("/leaderboard-profit", {
     method: "post",
     headers: new Headers({
       "Content-Type": "application/json"

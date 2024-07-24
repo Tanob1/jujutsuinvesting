@@ -203,7 +203,14 @@ h1 {
   font-size: 40px;
   font-style: bold;
   margin: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+}
+#profitDisplay {
+  text-align: center;
+  font-size: 40px;
+  font-style: bold;
+  margin: 0px;
+  margin-bottom: 15px;
 }
 @media screen and (max-width: 1650px) {
   #stockSidePanel {

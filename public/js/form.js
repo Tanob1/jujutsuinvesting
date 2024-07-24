@@ -60,7 +60,8 @@ const validateData = (data)=>{
         const date = new Date();
         sessionStorage.startTime = date.getTime();
         sessionStorage.username = data.username;
-        sessionStorage.money = data.money;
+        sessionStorage.money = Number(data.money);
+        sessionStorage.profit = Number(data.profit);
         sessionStorage.sukuna = data.sukuna;
         sessionStorage.yuta = data.yuta;
         sessionStorage.kenjaku = data.kenjaku;
@@ -88,6 +89,7 @@ const validateData = (data)=>{
         sessionStorage.gakuganji = data.gakuganji;
         sessionStorage.inumaki = data.inumaki;
         sessionStorage.utahime = data.utahime;
+        sessionStorage.hana = data.hana;
         //sessionStorage = JSON.parse(data)
         location.href = '/';
     }

@@ -218,6 +218,15 @@ let stockValues = [
     "Gakuganji",
     0,
   ],
+  [
+    [
+      19.32, 18.42, 17.35, 16.13, 15.52, 15.17, 24.75, 24.34, 23.67, 27.28,
+      41.39,
+    ],
+    true,
+    "Hana",
+    0,
+  ],
 ];
 //possibly add checkboxes for fraud and goat mode
 /*let fraudNames = {"Gojo":"Go/Jo","Kashimo":"The Waffled One","Sukuna":"Fraudkuna","Yuta":"The Sneakiest","Maki":"Fem Toji","Yuji":"Punch and Kick Merchant","Higuruma":"Fodder 1","Kenjaku":"King of Recieving Backshots","Hakari":"Fodder 2","Nobara":"Haruta Victim","Megumi":"Potential Man","Uraume":"Glorified Freezer","Todo":"Useless CT Now"}
@@ -235,6 +244,8 @@ let buyNum = 1;
 canvas.id = "stockGraph";
 const stockMax = 90;
 let money = 1000;
+let profit=0;
+let totalstockvalue=1000;
 let loggedIn = false;
 document.getElementById("canvasBox").appendChild(canvas);
 let context = canvas.getContext("2d");
@@ -303,9 +314,12 @@ window.onload = async () => {
 };
 function setupFromServer() {
   money = Number(sessionStorage.money);
+  profit = Number(sessionStorage.profit);
   for (let item of stockValues) {
     item[3] = Number(sessionStorage.getItem(item[2].toLowerCase()));
   }
+  let profitDisplay = document.getElementById("profitDisplay");
+  profitDisplay.innerHTML = `Profit:$${profit.toFixed(2)}`;
 }
 
 function toggleAll(num){
@@ -386,6 +400,8 @@ async function getStockData(callback) {
 function setUpFirstTime() {
   if (decodeURIComponent(document.cookie) == "" || getCookie("Money")==null|| getCookie("Money")=="") {
     setCookie("Money", money);
+    setCookie("Profit", profit);
+    setCookie("totalstockvalue", totalstockvalue);
     const date = new Date();
     setCookie("LastDate", date.getTime());
     for (let item of stockValues) {
@@ -396,27 +412,44 @@ function setUpFirstTime() {
 function setUpOtherTimes() {
   if (decodeURIComponent(document.cookie) != ""&& getCookie("Money")!=null&& getCookie("Money")!="") {
     const date = new Date();
-    money = getCookie("Money");
-    money = Number(money);
+    money = Number(getCookie("Money"));
+    totalstockvalue = money;
+    for(let item of stockValues){
+      item[3] = getCookie(item[2]);
+      totalstockvalue +=item[3]*item[0][stockValues[0][0].length - 1];
+    }
+    if(getCookie("Profit")=='null'){
+      setCookie("totalstockvalue", totalstockvalue);
+      profit=0;
+    }
+    else{
+      profit = Number(getCookie("Profit"))+totalstockvalue-Number(getCookie("totalstockvalue"));
+    }
     timeSinceLastCookie =
       (date.getTime() - getCookie("LastDate")) / (24 * 3600 * 1000);
     money += 100 * Math.floor(timeSinceLastCookie);
+    totalstockvalue += 100 * Math.floor(timeSinceLastCookie);
     timeSinceLastCookie -= Math.floor(timeSinceLastCookie);
     setCookie(
       "LastDate",
       date.getTime() - 24 * 3600 * 1000 * timeSinceLastCookie
     );
     setCookie("Money", money);
-    for (let item of stockValues) {
-      item[3] = getCookie(item[2]);
-    }
+    setCookie("totalstockvalue",totalstockvalue);
+    setCookie("Profit",profit);
+    let profitDisplay = document.getElementById("profitDisplay");
+    profitDisplay.innerHTML = `Profit:$${profit.toFixed(2)}`;
   }
 }
 function drawStockSidePanel() {
   let cashDisplay = document.createElement("h1");
   cashDisplay.setAttribute("id", "cashDisplay");
   document.getElementById("stockSidePanelMoney").appendChild(cashDisplay);
-  cashDisplay.innerHTML = `Bank:$${+money.toFixed(2)}`;
+  cashDisplay.innerHTML = `Bank:$${money.toFixed(2)}`;
+  let profitDisplay = document.createElement("h1");
+  profitDisplay.setAttribute("id", "profitDisplay");
+  document.getElementById("stockSidePanelMoney").appendChild(profitDisplay);
+  profitDisplay.innerHTML = `Profit:$${0}`;
 }
 function changeSellNum(num) {
   sellNum = num;
@@ -444,7 +477,7 @@ function changeBuyNum(num) {
 }
 function updateMoney() {
   let cashDisplay = document.getElementById("cashDisplay");
-  cashDisplay.innerHTML = `Bank:$${+money.toFixed(2)}`;
+  cashDisplay.innerHTML = `Bank:$${money.toFixed(2)}`;
 }
 function drawStockPanel() {
   for (const [index, item] of stockValues.entries()) {
@@ -722,6 +755,7 @@ function drawStocks() {
 }
 const validateData = (data) => {
   sessionStorage.money = Number(data.money);
+  sessionStorage.profit = Number(data.profit);
   sessionStorage.sukuna = data.sukuna;
   sessionStorage.yuta = data.yuta;
   sessionStorage.kenjaku = data.kenjaku;
@@ -749,4 +783,5 @@ const validateData = (data) => {
   sessionStorage.gakuganji = data.gakuganji;
   sessionStorage.inumaki = data.inumaki;
   sessionStorage.utahime = data.utahime;
+  sessionStorage.hana = data.hana;
 };
