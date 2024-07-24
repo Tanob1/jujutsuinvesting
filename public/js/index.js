@@ -418,7 +418,7 @@ function setUpOtherTimes() {
       item[3] = getCookie(item[2]);
       totalstockvalue +=item[3]*item[0][stockValues[0][0].length - 1];
     }
-    if(getCookie("Profit")=='null'){
+    if(getCookie("Profit")=='null'||getCookie("Profit")==''){
       setCookie("totalstockvalue", totalstockvalue);
       profit=0;
     }
