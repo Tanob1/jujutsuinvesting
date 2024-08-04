@@ -8,11 +8,7 @@ import {
   Image,
   Skeleton,
   Box,
-  Flex,
   Text,
-  Spacer,
-  Card,
-  CardBody,
   Slider,
   SliderTrack,
   SliderFilledTrack,
@@ -24,6 +20,17 @@ import {
 } from '@chakra-ui/react'
 
 export default function Home() {
+
+  const handleFetch = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/');
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   const [BuysliderValue, setBuySliderValue] = useState(1)
   const [SellsliderValue, setSellSliderValue] = useState(1)
   const characters = [
@@ -52,7 +59,6 @@ export default function Home() {
     { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
     { src:   'https://ih1.redbubble.net/image.5394298500.7778/flat,750x,075,f-pad,750x1000,f8f8f8.jpg', name: 'Name' , price: 57, owned: 20},
 
-
     // Add more stock as needed
   ];
   return (
@@ -70,20 +76,18 @@ export default function Home() {
         Do you want to put your stocks in Gojo? Kashimo? Yuta? Whoever you want to invest in we have you covered, simply select who to invest in and invest! Their stock will go up if they are doing good or are winning against/beat someone. Their stock will go down if they are doing bad or losing against someone or are killed. Stocks close at 11pm EST on Wednesday(right before leaks drop) and reopen ASAP(within a day at most)
         </Text>
         <HStack>
-        <Button
-                rounded={'full'}
-                size={'lg'}
-                fontWeight={'normal'}
-                px={6}
-                colorScheme={'purple'}
-                bg={'purple.400'}
-                _hover={{ bg: 'purple.500' }}
-                as={'a'}
-                href={'/signup'}
-                >
-                
-                Sign Up
-              </Button>
+    <Button
+      rounded={'full'}
+      size={'lg'}
+      fontWeight={'normal'}
+      px={6}
+      colorScheme={'purple'}
+      bg={'purple.400'}
+      _hover={{ bg: 'purple.500' }}
+      onClick={handleFetch}
+    >
+      Sign Up
+    </Button>
               <Button
                 rounded={'full'}
                 size={'lg'}
