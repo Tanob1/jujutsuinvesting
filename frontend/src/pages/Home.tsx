@@ -24,10 +24,10 @@ export default function Home() {
   const handleFetch = async () => {
     try {
       const response = await fetch('http://localhost:3000/');
-      const data = await response.json();
+      const data = await response;
       console.log(data);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.log('Error fetching data:', error);
     }
   };
 
