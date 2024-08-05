@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require('cors');
 const path = require("path");
 const bodyParser = require("body-parser");
 const knex = require("knex");
@@ -25,6 +26,10 @@ let initialPath = path.join(__dirname, "../frontend/");
 app.use(bodyParser.json());
 app.use(express.static(initialPath));
 
+app.use(cors({
+  origin: 'http://localhost:5173' // Replace with your frontend's origin
+}));
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(initialPath, "index.html"));
 });
@@ -36,6 +41,9 @@ app.get("/register", (req, res) => {
 });
 app.get("/leaderboard", (req, res) => {
   res.sendFile(path.join(initialPath, "leaderboard.html"));
+});
+app.get("/connection_test", (req, res) => {
+  res.json("Connection is working");
 });
 /*app.get("/leaderboard-money", (req, res) => {
   return db("users")
