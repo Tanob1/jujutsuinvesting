@@ -32,10 +32,10 @@ function appendScores(singleInvestor, investorIndex){
   scoreboardTableBodyRow.className = "scoreboardTableBodyRow";
   let scoreRanking = document.createElement("td");
   if(sessionStorage.username!=null){
-    scoreRanking.innerText = singleInvestor.position+from;
+    scoreRanking.innerText = singleInvestor.position+Number(from);
   }
   else{
-    scoreRanking.innerText = investorIndex+from;
+    scoreRanking.innerText = investorIndex+Number(from);
   }
   let usernameData = document.createElement("td");
   usernameData.innerText = singleInvestor.username;
@@ -69,7 +69,6 @@ function showMore(){
     })
     .then((res) => res.json())
     .then((scores) => {
-      drawInvestors(); 
       for (const score of scores) {
         let scoreIndex = scores.indexOf(score) + 1;
         appendScores(score, scoreIndex); 
@@ -90,7 +89,6 @@ function showMore(){
   }) 
     .then((res) => res.json())
     .then((scores) => {
-      drawInvestors(); 
       for (const score of scores) {
         let scoreIndex = scores.indexOf(score) + 1;
         appendScores(score, scoreIndex); 
@@ -109,7 +107,6 @@ function showMore(){
   }) 
     .then((res) => res.json())
     .then((scores) => {
-      drawInvestors(); 
       for (const score of scores) {
         let scoreIndex = scores.indexOf(score) + 1;
         appendScores(score, scoreIndex); 
