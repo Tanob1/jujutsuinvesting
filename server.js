@@ -76,7 +76,7 @@ app.post("/leaderboard-money", (req, res) => {
     .select('*')
     .from('stuff')
     .where('position','<',(1000+from))
-    .where('position','>',from)
+    .andwhere('position','>',from)
     .orWhere({
       username: username,
     })
@@ -97,7 +97,7 @@ app.post("/leaderboard-money", (req, res) => {
     .select('*')
     .from('stuff')
     .where('position','<',(1000+from))
-    .where('position','>',from)
+    .andwhere('position','>',from)
     .orWhere({
       username: username,
     })
@@ -122,7 +122,7 @@ app.post("/leaderboard-totalstockvalue", (req, res) => {
     .select('*')
     .from('stuff')
     .where('position','<',(1000+from))
-    .where('position','>',from)
+    .andwhere('position','>',from)
     .orWhere({
       username: username,
     })
@@ -144,7 +144,7 @@ app.post("/leaderboard-totalstockvalue", (req, res) => {
     .from('stuff')
     .where('position','<',1000)
     .where('position','<',(1000+from))
-    .where('position','>',from)
+    .andwhere('position','>',from)
     .orWhere({
       username: username,
     })
@@ -169,7 +169,7 @@ app.post("/leaderboard-profit", (req, res) => {
     .select('*')
     .from('stuff')
     .where('position','<',(1000+from))
-    .where('position','>',from)
+    .andwhere('position','>',from)
     .orWhere({
       username: username,
     })
@@ -190,7 +190,7 @@ app.post("/leaderboard-profit", (req, res) => {
     .select('*')
     .from('stuff')
     .where('position','<',(1000+from))
-    .where('position','>',from)
+    .andwhere('position','>',from)
     .then((data) => {
       res.json(data);
     })
