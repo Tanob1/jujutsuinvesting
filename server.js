@@ -64,7 +64,8 @@ app.get("/leaderboard", (req, res) => {
     });
 });*/
 app.post("/leaderboard-money", (req, res) => {
-  const {username}=req.body;
+  const {username,from}=req.body;
+  (from==null) ? from=0:from=from;
   if(username!=null){
   return db("users")
     .with('stuff',db("users").select(["totalstockvalue","profit","money", "username"])
@@ -74,7 +75,9 @@ app.post("/leaderboard-money", (req, res) => {
     .returning(["scores"]))
     .select('*')
     .from('stuff')
-    .where('position','<',16)
+    .where('position','<',1000)
+    .where('position','<',(1000+from))
+    .where('position','>',from)
     .orWhere({
       username: username,
     })
@@ -87,10 +90,19 @@ app.post("/leaderboard-money", (req, res) => {
   }
   else{
     return db("users")
-    .select(["money","profit","totalstockvalue", "username"])
-    .orderBy("money", "desc")
-    .limit(15)
-    .returning(["scores"])
+    .with('stuff',db("users").select(["totalstockvalue","profit","money", "username"])
+    .rowNumber('position', function () {
+      this.orderBy("money", "desc");
+    })
+    .returning(["scores"]))
+    .select('*')
+    .from('stuff')
+    .where('position','<',1000)
+    .where('position','<',(1000+from))
+    .where('position','>',from)
+    .orWhere({
+      username: username,
+    })
     .then((data) => {
       res.json(data);
     })
@@ -100,7 +112,8 @@ app.post("/leaderboard-money", (req, res) => {
   }
 });
 app.post("/leaderboard-totalstockvalue", (req, res) => {
-  const {username}=req.body;
+  const {username,from}=req.body;
+  (from==null) ? from=0:from=from;
   if(username!=null){
   return db("users")
     .with('stuff',db("users").select(["totalstockvalue","profit","money", "username"])
@@ -110,7 +123,9 @@ app.post("/leaderboard-totalstockvalue", (req, res) => {
     .returning(["scores"]))
     .select('*')
     .from('stuff')
-    .where('position','<',16)
+    .where('position','<',1000)
+    .where('position','<',(1000+from))
+    .where('position','>',from)
     .orWhere({
       username: username,
     })
@@ -123,10 +138,19 @@ app.post("/leaderboard-totalstockvalue", (req, res) => {
   }
   else{
     return db("users")
-    .select(["totalstockvalue","profit","money", "username"])
-    .orderBy("totalstockvalue", "desc")
-    .limit(15)
-    .returning(["scores"])
+    .with('stuff',db("users").select(["totalstockvalue","profit","money", "username"])
+    .rowNumber('position', function () {
+      this.orderBy("totalstockvalue", "desc");
+    })
+    .returning(["scores"]))
+    .select('*')
+    .from('stuff')
+    .where('position','<',1000)
+    .where('position','<',(1000+from))
+    .where('position','>',from)
+    .orWhere({
+      username: username,
+    })
     .then((data) => {
       res.json(data);
     })
@@ -136,7 +160,8 @@ app.post("/leaderboard-totalstockvalue", (req, res) => {
   }
 });
 app.post("/leaderboard-profit", (req, res) => {
-  const {username}=req.body;
+  const {username,from}=req.body;
+  (from==null) ? from=0:from=from;
   if(username!=null){
   return db("users")
     .with('stuff',db("users").select(["totalstockvalue","profit","money", "username"])
@@ -146,7 +171,8 @@ app.post("/leaderboard-profit", (req, res) => {
     .returning(["scores"]))
     .select('*')
     .from('stuff')
-    .where('position','<',16)
+    .where('position','<',(1000+from))
+    .where('position','>',from)
     .orWhere({
       username: username,
     })
@@ -159,10 +185,15 @@ app.post("/leaderboard-profit", (req, res) => {
   }
   else{
     return db("users")
-    .select(["money","profit","totalstockvalue", "username"])
-    .orderBy("profit", "desc")
-    .limit(15)
-    .returning(["scores"])
+    .with('stuff',db("users").select(["totalstockvalue","profit","money", "username"])
+    .rowNumber('position', function () {
+      this.orderBy("profit", "desc");
+    })
+    .returning(["scores"]))
+    .select('*')
+    .from('stuff')
+    .where('position','<',(1000+from))
+    .where('position','>',from)
     .then((data) => {
       res.json(data);
     })
@@ -322,7 +353,8 @@ app.post("/buy-stock",authenticateToken, (req, res) => {
   const maxID = db.max("id").from("stockvalues");
   let flag = false;
   const date = new Date();
-  if((date.getDay()==4&&!(date.getHours()==0||date.getHours()==1)||date.getDay()==5)&&!enableInsiderTrading){
+  if(false){
+  //if((date.getDay()==4&&!(date.getHours()==0||date.getHours()==1)||date.getDay()==5)&&!enableInsiderTrading){
     res.json("Buying and selling stocks is closed between Thurday(when leaks drop) and when I update the stock values(asap) to prevent people from basicially insider trading, sorry about any inconvinience this may cause");
   }
   else{
@@ -409,7 +441,8 @@ app.post("/sell-stock",authenticateToken, (req, res) => {
   let flag = false;
   const date = new Date();
   //(date.getDay()==4 || (date.getDay()==3&&(date.getHours()==23||date.getHours()==22)))
-  if((date.getDay()==4&&!(date.getHours()==0||date.getHours()==1)||date.getDay()==5)&&!enableInsiderTrading){
+  if(false){
+  //if((date.getDay()==4&&!(date.getHours()==0||date.getHours()==1)||date.getDay()==5)&&!enableInsiderTrading){
     res.json("Buying and selling stocks is closed between Thurday(when leaks drop) and when I update the stock values(asap) to prevent people from basicially insider trading, sorry about any inconvinience this may cause");
   }
   else{

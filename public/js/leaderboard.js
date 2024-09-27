@@ -1,3 +1,5 @@
+let from=0;
+let currentType=0;
 getScores(0);
 document.getElementById("stockSort").addEventListener("change", function() {
   document.getElementById("leaderboard").innerHTML='';
@@ -52,8 +54,71 @@ function appendScores(singleInvestor, investorIndex){
   );
   scoreboardTable.append(scoreboardTableBodyRow); 
 };
-
+function showMore(){
+  from +=1000;
+  if(currentType==1){
+    fetch("/leaderboard-money", {
+      method: "post",
+      headers: new Headers({
+        "Content-Type": "application/json"
+      }),
+      body: JSON.stringify({
+        username: sessionStorage.username,
+        from: from
+      }),
+    })
+    .then((res) => res.json())
+    .then((scores) => {
+      drawInvestors(); 
+      for (const score of scores) {
+        let scoreIndex = scores.indexOf(score) + 1;
+        appendScores(score, scoreIndex); 
+      }
+    });
+    console.log("Not hello :(");
+  }
+  else if(currentType==0){
+  fetch("/leaderboard-totalstockvalue", {
+    method: "post",
+    headers: new Headers({
+      "Content-Type": "application/json"
+    }),
+    body: JSON.stringify({
+      username: sessionStorage.username,
+      from: from
+    }),
+  }) 
+    .then((res) => res.json())
+    .then((scores) => {
+      drawInvestors(); 
+      for (const score of scores) {
+        let scoreIndex = scores.indexOf(score) + 1;
+        appendScores(score, scoreIndex); 
+      }
+    });
+}else if(currentType==2){
+  fetch("/leaderboard-profit", {
+    method: "post",
+    headers: new Headers({
+      "Content-Type": "application/json"
+    }),
+    body: JSON.stringify({
+      username: sessionStorage.username,
+      from: from
+    }),
+  }) 
+    .then((res) => res.json())
+    .then((scores) => {
+      drawInvestors(); 
+      for (const score of scores) {
+        let scoreIndex = scores.indexOf(score) + 1;
+        appendScores(score, scoreIndex); 
+      }
+    });
+};
+}
 function getScores(type){
+  currentType=type;
   if(type==1){
     fetch("/leaderboard-money", {
       method: "post",
