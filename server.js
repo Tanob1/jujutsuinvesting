@@ -64,7 +64,7 @@ app.get("/leaderboard", (req, res) => {
     });
 });*/
 app.post("/leaderboard-money", (req, res) => {
-  const {username,from}=req.body;
+  let {username,from}=req.body;
   (from==null) ? from=0:from=from;
   if(username!=null){
   return db("users")
@@ -110,7 +110,7 @@ app.post("/leaderboard-money", (req, res) => {
   }
 });
 app.post("/leaderboard-totalstockvalue", (req, res) => {
-  const {username,from}=req.body;
+  let {username,from}=req.body;
   (from==null) ? from=0:from=from;
   if(username!=null){
   return db("users")
@@ -157,7 +157,7 @@ app.post("/leaderboard-totalstockvalue", (req, res) => {
   }
 });
 app.post("/leaderboard-profit", (req, res) => {
-  const {username,from}=req.body;
+  let {username,from}=req.body;
   (from==null) ? from=0:from=from;
   if(username!=null){
   return db("users")
