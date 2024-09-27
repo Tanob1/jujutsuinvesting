@@ -32,10 +32,10 @@ function appendScores(singleInvestor, investorIndex){
   scoreboardTableBodyRow.className = "scoreboardTableBodyRow";
   let scoreRanking = document.createElement("td");
   if(sessionStorage.username!=null){
-    scoreRanking.innerText = singleInvestor.position+Number(from);
+    scoreRanking.innerText = Number(singleInvestor.position)+Number(from);
   }
   else{
-    scoreRanking.innerText = investorIndex+Number(from);
+    scoreRanking.innerText = Number(investorIndex)+Number(from);
   }
   let usernameData = document.createElement("td");
   usernameData.innerText = singleInvestor.username;
