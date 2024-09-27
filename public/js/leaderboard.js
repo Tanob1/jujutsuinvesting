@@ -32,10 +32,10 @@ function appendScores(singleInvestor, investorIndex){
   scoreboardTableBodyRow.className = "scoreboardTableBodyRow";
   let scoreRanking = document.createElement("td");
   if(sessionStorage.username!=null){
-    scoreRanking.innerText = singleInvestor.position
+    scoreRanking.innerText = singleInvestor.position+from;
   }
   else{
-    scoreRanking.innerText = investorIndex;
+    scoreRanking.innerText = investorIndex+from;
   }
   let usernameData = document.createElement("td");
   usernameData.innerText = singleInvestor.username;
@@ -137,7 +137,6 @@ function getScores(type){
         appendScores(score, scoreIndex); 
       }
     });
-    console.log("Not hello :(");
   }
   else if(type==0){
   fetch("/leaderboard-totalstockvalue", {
