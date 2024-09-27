@@ -75,7 +75,6 @@ app.post("/leaderboard-money", (req, res) => {
     .returning(["scores"]))
     .select('*')
     .from('stuff')
-    .where('position','<',1000)
     .where('position','<',(1000+from))
     .where('position','>',from)
     .orWhere({
@@ -97,7 +96,6 @@ app.post("/leaderboard-money", (req, res) => {
     .returning(["scores"]))
     .select('*')
     .from('stuff')
-    .where('position','<',1000)
     .where('position','<',(1000+from))
     .where('position','>',from)
     .orWhere({
@@ -123,7 +121,6 @@ app.post("/leaderboard-totalstockvalue", (req, res) => {
     .returning(["scores"]))
     .select('*')
     .from('stuff')
-    .where('position','<',1000)
     .where('position','<',(1000+from))
     .where('position','>',from)
     .orWhere({
