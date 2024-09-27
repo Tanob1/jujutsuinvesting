@@ -78,3 +78,25 @@ body{
 .Homepage:active{
   background-color: rgb(20, 10, 95);
 }
+.MoreStocks{
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+  width: 48%;
+  height: 46px;
+  font-size: larger;
+  border: rgb(0, 77, 13);
+  background-color: rgb(48, 202, 189);
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 3px;
+  cursor: pointer;
+  text-align: center;
+}
+.MoreStocks:hover{
+  background-color: rgb(14, 136, 126);
+}
+.MoreStocks:active{
+  background-color: rgb(10, 95, 81);
+}
